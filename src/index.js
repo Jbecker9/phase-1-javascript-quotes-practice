@@ -51,11 +51,11 @@ function newQuote(){
 function functionWork(e){
     const formControl = document.getElementById("new-quote-form").querySelectorAll(".form-control")
     let quoteObj = {
-        newQuote:formControl.target.newQuote.value,
-        author:formControl.target.author.value
+        newQuote:e.target.new_quote.value,
+        author:e.target.author.value
     }
     fetch("http://localhost:3000/quotes", {
-        method: "POST",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
